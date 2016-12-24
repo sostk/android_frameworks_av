@@ -3285,7 +3285,6 @@ return false;
         //check if it's multi-channel AAC (includes sub formats) and FLAC format
         if ((popcount(offloadInfo.channel_mask) > 2) &&
             (((offloadInfo.format & AUDIO_FORMAT_MAIN_MASK) == AUDIO_FORMAT_AAC) ||
-            ((offloadInfo.format & AUDIO_FORMAT_MAIN_MASK) == AUDIO_FORMAT_FLAC))) {
             ALOGD("offload disabled for multi-channel AAC and FLAC format");
             return false;
         }
@@ -3331,7 +3330,6 @@ return false;
         //do not check duration for other audio formats, e.g. dolby AAC/AC3 and amrwb+ formats
         if ((offloadInfo.format == AUDIO_FORMAT_MP3) ||
             ((offloadInfo.format & AUDIO_FORMAT_MAIN_MASK) == AUDIO_FORMAT_AAC) ||
-            ((offloadInfo.format & AUDIO_FORMAT_MAIN_MASK) == AUDIO_FORMAT_FLAC) ||
             pcmOffload)
             return false;
     }
